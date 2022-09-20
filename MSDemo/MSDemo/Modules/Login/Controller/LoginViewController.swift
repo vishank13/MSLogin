@@ -129,13 +129,13 @@ class LoginViewController: UIViewController {
     // MARK: TextField Validations
     // ------------------------------
     @IBAction func validUsernameAction(_ sender: UITextField) {
-        guard let username = sender.text else { return }
-        isValidUsername = loginViewModel?.validUsername(username)
+        guard let username = sender.text, let loginViewModel = loginViewModel else { return }
+        isValidUsername = loginViewModel.validUsername(username)
     }
     
     @IBAction func validPasswordAction(_ sender: UITextField) {
-        guard let password = sender.text else { return }
-        isValidPassword = loginViewModel?.validPassword(password)
+        guard let password = sender.text, let loginViewModel = loginViewModel else { return }
+        isValidPassword = loginViewModel.validPassword(password)
     }
 }
 
