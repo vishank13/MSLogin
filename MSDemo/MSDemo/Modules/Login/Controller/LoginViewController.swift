@@ -130,12 +130,12 @@ class LoginViewController: UIViewController {
     // ------------------------------
     @IBAction func validUsernameAction(_ sender: UITextField) {
         guard let username = sender.text else { return }
-        isValidUsername = Helper.validUsername(username: username)
+        isValidUsername = loginViewModel?.validUsername(username)
     }
     
     @IBAction func validPasswordAction(_ sender: UITextField) {
         guard let password = sender.text else { return }
-        isValidPassword = Helper.validPassword(password: password)
+        isValidPassword = loginViewModel?.validPassword(password)
     }
 }
 
